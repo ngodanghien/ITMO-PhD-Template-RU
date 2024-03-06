@@ -1,0 +1,41 @@
+%% author: hiennd
+%% date: 03 March 2024.
+%=========[PhD thesis information]==============================================
+\newcommand{\PhDStudent}{Нго Данг Хиен}
+\newcommand{\ThesisName}{Адаптивное управление системами с переменными параметрами}
+\newcommand{\MySpeciality}{Специальность 2.3.1.\\
+	Системный анализ, управление и обработка информации, статистика\\
+	(технические науки)}
+\newcommand{\MySuperviser}{кандидат технических наук, доцент\\Герасимов Дмитрий Николаевич}
+%=========[My publications]===================================================
+%\newcounter{AllPapers}
+%\newcounter{ScopusPapers}
+%\newcounter{VakPapers}
+%% modify here!
+%\setcounter{AllPapers}{3}
+%\setcounter{ScopusPapers}{2}
+%\setcounter{VakPapers}{0}
+%% https://www.overleaf.com/learn/latex/Counters#\newcounter{somecounter}[anothercounter]
+%% printing counter values:
+%\newcounter{somecounter}
+%\setcounter{somecounter}{9} 
+% \arabic{somecounter}
+% \thesomecounter{} or \thesomecounter~
+
+\newenvironment{paper-scopus}{
+	\begin{enumerate}
+		\item Gerasimov D.N., Popov A.S, \textcolor{blue}{Ngo D.H}, Nikiforov V.O. Adaptive control of LTV systems with uncertain periodic coefficients // IFAC-PapersOnLine. 2023. Vol.~56. No.~2. P.~9185--9190. URL: \href{https://doi.org/10.1016/j.ifacol.2023.10.160}{https://doi.org/10.1016/j.ifacol.2023.10.160}.
+		\item Gerasimov D.N, \textcolor{blue}{Ngo D. H}., Nikiforov V.O. Direct Adaptive Control of LTV Discrete-time Systems with Uncertain Periodic Coefficients // 63nd IEEE Conference on Decision and Control (CDC) 2024. Vol.~xx. No.~x. P.x~--y. URL: \href{https://doi.org/}{https://doi.org/}
+	\end{enumerate}
+}
+
+%%% Command use ------------------------------------------------------------
+\newenvironment{paper-other}{
+	\begin{enumerate}
+		\item \textcolor{blue}{ Нго Д.Х.}, Герасимов Д.Н. Адаптивное управление дискретными системами с неопределёнными периодическими коэффициентами // XIV Всероссийское совещание по проблемам управления (ВСПУ-2024). 2024. 
+	\end{enumerate}
+}
+
+\newcommand{\insertpapperScopus}{\begin{paper-scopus}  \end{paper-scopus}}
+\newcommand{\insertpapperOther}{\begin{paper-other}  \end{paper-other}}
+

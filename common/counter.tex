@@ -1,0 +1,58 @@
+%%%===(begin)========KHAI BÁO CÁC BỘ ĐẾM ĐỂ TÍNH CHAPTER, PAGE, CITE...===========
+%https://ctan.org/pkg/totcount
+% To print the maximum value of 〈counter 〉 we can call the macro \total{〈counter 〉}
+\usepackage{totcount}
+\usepackage[figure,table]{totalcount}   % This package offers commands for typesetting total values of counters. This way the commands \totalfigures and \totaltables will be defined which are typesetting the total number of figures resp.
+\usepackage{totpages}   % This package counts the total number of pages
+% with \ref{TotPages}) you get the total number of pages the document
+% or \theTotPages or \arabic{TotPages}
+
+\usepackage{etoolbox}
+%Any \AtBeginDocument code is executed towards the beginning of the document body, after the main aux file has been read for the first time. 
+%Any \AtEndDocument code is executed at the end of the document body, before the main aux file is read for the second time.
+\AtBeginDocument{%
+	%\setlength{\parindent}{2.5em}                   % Абзацный отступ. Должен быть одинаковым по всему тексту и равен пяти знакам (ГОСТ Р 7.0.11-2011, 5.3.7).
+}
+% \AfterPreamble{code} là một biến thể của \AtBeginDocument có thể được sử dụng trong cả phần mở đầu và nội dung tài liệu. Khi được sử dụng trong phần mở đầu, nó hoạt động giống hệt như \AtBeginDocument. Khi được sử dụng trong nội dung tài liệu, nó sẽ ngay lập tức thực thi đối số {code}. \AtBeginDocument sẽ báo lỗi trong trường hợp này. Cái móc này là hữu ích để trì hoãn mã cần ghi vào tệp phụ trợ chính.
+\AfterEndPreamble{% без этого polyglossia сама всё переопределяет
+	% Macro \setsecnumformat{}. From package: class-memoir.
+	%\setsecnumformat{\csname the#1\endcsname.\space} % thêm . và space vào sau number của section. e.g 1.1. title
+}
+%\AfterEndPreamble{} This hook differs from \AtBeginDocument in that the hcodei is executed at the very end of \begin{document}, after any \AtBeginDocument code.
+
+\AfterEndPreamble{
+	%% регистрируем счётчики в системе totcounter
+	% using \usepackage{totcount}  /https://ctan.altspu.ru/macros/latex/contrib/totcount/totcount.pdf
+	% to register that counter as \regtotcounter	a “total counter” on an existing counter.
+	% các counter trong regtotcounter cần được tồn tại trước đó như: totpages, totalcount
+	\regtotcounter{totalcount@figure}
+	\regtotcounter{totalcount@table}       % Если иным способом поставить в преамбуле то ошибка в числе аблиц
+	\regtotcounter{TotPages}               % Если иным способом поставить в преамбуле то ошибка в числе траниц
+	\newtotcounter{totalappendix} 		 %creating a new counter and \newtotcounter	registering it as a total counter
+	\newtotcounter{totalchapter}
+}
+%============================================
+%%http://www.linux.org.ru/forum/general/6993203#comment-6994589 (используется totcount)
+\makeatletter
+	\def\formtotal#1#2#3#4#5{
+		\newcount\@c
+		\@c\totvalue{#1}\relax
+		\newcount\@last
+		\newcount\@pnul
+		\@last\@c\relax
+		\divide\@last 10
+		\@pnul\@last\relax
+		\divide\@pnul 10
+		\multiply\@pnul-10
+		\advance\@pnul\@last
+		\multiply\@last-10
+		\advance\@last\@c
+		#2%
+		\ifnum\@pnul=1#5\else%
+		\ifcase\@last#5\or#3\or#4\or#4\or#4\else#5\fi
+		\fi
+	}
+\makeatother
+	
+\newcommand{\formbytotal}[5]{\total{#1}~\formtotal{#1}{#2}{#3}{#4}{#5}}
+%%%===(end)========KHAI BÁO CÁC BỘ ĐẾM ĐỂ TÍNH CHAPTER, PAGE, CITE...===========
