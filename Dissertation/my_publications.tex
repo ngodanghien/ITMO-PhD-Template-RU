@@ -1,0 +1,13 @@
+\chapter{Texts of author’s key publications}
+\label{app:publications}
+\setcounter{totalappendix}{\value{chapter}} 
+
+% first publication
+% use: \usepackage[⟨options⟩]{pdfpages}
+% \includepdf = Inserts pages of an external PDF document. \includepdf[⟨key=val ⟩]{⟨filename⟩}
+\includepdf[
+pages={-},  %(include all pages) Selects pages to insert. pages=- will insert all pages of the document.
+pagecommand={},  % to include global numbering
+scale=0.9,  % to leave space for the global page numbers
+%frame,  % Puts a frame around each logical page.
+]{biblio/MyPublications/2019_PRL_acoustic.pdf}

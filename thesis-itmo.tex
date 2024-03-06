@@ -7,11 +7,12 @@
 \input{biblio/biblatex}
 \input{biblio/author}		% About PhD Student and publications.  
 
+\listfiles	%for debug
+
 \begin{document}
 
 % calculate your papers
-\input{biblio/calcrefs}
-\input{common/renames}
+%\input{biblio/calcrefs}
 
 %%% Структура диссертации (ГОСТ Р 7.0.11-2011, 4)
 \include{Dissertation/title}           % Титульный лист
@@ -33,8 +34,8 @@
 \include{Dissertation/references}      % Список литературы
 \include{Dissertation/acknowledgements} % Благодарности
 
-%%% Настройки для приложений
 \appendix
 \include{Dissertation/appendix}        % Приложения, тут же свои публикации
+\include{Dissertation/my_publications}
 
 \end{document}
