@@ -1,6 +1,7 @@
 ## MacOS specific
 .DS_Store
-
+## folder build
+out/
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

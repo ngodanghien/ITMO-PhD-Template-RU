@@ -22,21 +22,3 @@
 \newtotcounter{citenum}
 \AtEveryBibitem{\stepcounter{citenum}}
 
-
-
-% https://tex.stackexchange.com/a/373241
-% \defbibenvironment{bibliography}
-%   {\list
-%      {\printtext[labelnumberwidth]{%
-%       \printfield{labelprefix}%
-%       \printfield{labelnumber}}}
-%      {\setlength{\labelwidth}{\labelnumberwidth}%
-%       \setlength{\leftmargin}{\labelwidth}%
-%       \setlength{\labelsep}{\biblabelsep}%
-%       \addtolength{\leftmargin}{\labelsep}%
-%       \addtolength{\leftmargin}{35pt}%<----- here
-%       \setlength{\itemsep}{\bibitemsep}%
-%       \setlength{\parsep}{\bibparsep}}%
-%       \renewcommand*{\makelabel}[1]{\hss##1}}
-%   {\endlist}
-%   {\item}

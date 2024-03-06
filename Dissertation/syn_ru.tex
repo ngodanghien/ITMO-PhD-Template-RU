@@ -1,3 +1,9 @@
+\ifnumequal{\value{contnumfig}}{1}{}{\counterwithout{figure}{chapter}}
+\ifnumequal{\value{contnumtab}}{1}{}{\counterwithout{table}{chapter}}
+
+\renewcommand{\figurename}{Рисунок}
+\renewcommand{\tablename}{Таблица}
+
 \chapter*{Реферат}
 \addcontentsline{toc}{chapter}{Реферат} 
 
@@ -22,10 +28,10 @@
 
 
 \paragraph*{Основные положения, выносимые на защиту.}
-\begin{enumerate}
-    \item \statementOneRU
-    \item \statementTwoRU 
-\end{enumerate}
+%\begin{enumerate}
+%    \item \statementOneRU
+%    \item \statementTwoRU 
+%\end{enumerate}
 
 \paragraph*{Научная новизна.}
 
