@@ -1,7 +1,7 @@
 %%%===(begin)========KHAI BÁO CÁC BỘ ĐẾM ĐỂ TÍNH CHAPTER, PAGE, CITE...===========
 %https://ctan.org/pkg/totcount
 % To print the maximum value of 〈counter 〉 we can call the macro \total{〈counter 〉}
-\usepackage{totcount}
+%\usepackage{totcount} % declared in the packages.tex
 \usepackage[figure,table]{totalcount}   % This package offers commands for typesetting total values of counters. This way the commands \totalfigures and \totaltables will be defined which are typesetting the total number of figures resp.
 \usepackage{totpages}   % This package counts the total number of pages
 % with \ref{TotPages}) you get the total number of pages the document
@@ -11,7 +11,32 @@
 %Any \AtBeginDocument code is executed towards the beginning of the document body, after the main aux file has been read for the first time. 
 %Any \AtEndDocument code is executed at the end of the document body, before the main aux file is read for the second time.
 \AtBeginDocument{%
-	%\setlength{\parindent}{2.5em}                   % Абзацный отступ. Должен быть одинаковым по всему тексту и равен пяти знакам (ГОСТ Р 7.0.11-2011, 5.3.7).
+	%% Phải chạy trong \begin{document}
+	% count all your papers
+	\begin{refsection}[biblio/own.bib]
+		\nocite{*} 
+		\newcounter{AllMyPapers}  % to use in the text write \theAllMyPapers
+		\renewbibmacro*{finentry}{\stepcounter{AllMyPapers}\finentry}
+		% https://tex.stackexchange.com/a/404319
+		\setbox0\vbox{\printbibliography}
+	\end{refsection}
+		
+	% keyword=scopus, wos
+	\begin{refsection}[biblio/own.bib]
+		\nocite{*} 
+		\newcounter{ScopusPapers}  % to use in the text write \theScopusPapers
+		\renewbibmacro*{finentry}{\stepcounter{ScopusPapers}\finentry}
+		% https://tex.stackexchange.com/a/404319
+		\setbox0\vbox{\printbibliography[filter=filterScopus]}
+	\end{refsection}
+	% keyword=vak
+	\begin{refsection}[biblio/own.bib]
+		\nocite{*} 
+		\newcounter{VakPapers}  % to use in the text write \theVakPapers
+		\renewbibmacro*{finentry}{\stepcounter{VakPapers}\finentry}
+		% https://tex.stackexchange.com/a/404319
+		\setbox0\vbox{\printbibliography[filter=filterScopus]}
+	\end{refsection}
 }
 % \AfterPreamble{code} là một biến thể của \AtBeginDocument có thể được sử dụng trong cả phần mở đầu và nội dung tài liệu. Khi được sử dụng trong phần mở đầu, nó hoạt động giống hệt như \AtBeginDocument. Khi được sử dụng trong nội dung tài liệu, nó sẽ ngay lập tức thực thi đối số {code}. \AtBeginDocument sẽ báo lỗi trong trường hợp này. Cái móc này là hữu ích để trì hoãn mã cần ghi vào tệp phụ trợ chính.
 \AfterEndPreamble{% без этого polyglossia сама всё переопределяет
