@@ -1,8 +1,8 @@
 # PhD Thesis template (English) for ITMO University
 
-This is not an official $\LaTeX$ template. This template is based on [toftul/itmo-phd-thesis-template-en](https://github.com/toftul/itmo-phd-thesis-template-en) and [ITMO Шаблон LATEX для диссертации](https://dissovet.itmo.ru/index.php?main=110 )
+This is not an official $\LaTeX$ template. This template is based on [toftul/itmo-phd-thesis-template-ru](https://github.com/toftul/itmo-phd-thesis-template-ru) and [ITMO Шаблон LATEX для диссертации](https://dissovet.itmo.ru/index.php?main=110 )
 
-In addition, there is a repository of thesis templates for Russian [ngodanghien/ITMO-PhD-Template-RU](https://github.com/ngodanghien/ITMO-PhD-Template-RU)
+In addition, there is a repository of thesis templates for Russian [ngodanghien/ITMO-PhD-Template-EN](https://github.com/ngodanghien/ITMO-PhD-Template-EN)
 
 There is an official template on the [ITMO Dissertation Council](https://dissovet.itmo.ru/index.php?main=110) website, which is a fork of the well-known template [AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template).
 
@@ -65,7 +65,7 @@ The file contains references added in the following way: `\addbibresource{biblio
     Vol. 56, no. 2. — P. 9185–9190. — URL: [https : / / doi . org / 10 . 1016 / j .ifacol.2023.10.160.](https://doi.org/10.1016/j.ifacol.2023.10.160)
 
 6. In the file `biblio/own.bib`, if you only care about which article is {scopus/wos, vak}, add the line `keywords = {scopus}`, or `keywords = {vak}`. As for other articles that are not indexed above, you don't need to pay attention to them. They will be automatically printed in section: other articles.
-    ```bib
+    ```bib`
     @article{Gerasimov2023a,
         keywords = {scopus, wos},
         author = {Gerasimov, D and Popov, A and Hien, N.D. and Nikiforov, V},
