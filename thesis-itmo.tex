@@ -3,18 +3,15 @@
 \input{common/packages}		% Declare & setting the use of related packages
 \input{common/fonts}		% Configure to use russian font
 \input{common/styles}		% Format theme memoir follow ITMO style
-\input{common/counter}
-\input{biblio/biblatex}
+\input{biblio/biblatex}		% Configure biblatex with ГОСТ Р 7.0.5—2008
 \input{biblio/author}		% About PhD Student and publications.  
+\input{common/counter}		% Variables to count (including number of articles)
 
-\listfiles	%for debug
+
+%\listfiles	%for debug
 
 \begin{document}
 
-% calculate your papers
-%\input{biblio/calcrefs}
-
-%%% Структура диссертации (ГОСТ Р 7.0.11-2011, 4)
 \include{Dissertation/title}           % Титульный лист
 \include{Dissertation/contents}        % Оглавление
 
