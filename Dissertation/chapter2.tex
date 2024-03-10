@@ -1,2 +1,112 @@
 \chapter{Вторая глава}
 \label{ch:ch2}
+
+\section{Theorem} \label{chap1:sec1}
+
+	\begin{align} \label{eq:sec1}
+		1+2=3
+	\end{align}
+
+	\begin{theorem}
+		theorem
+	\end{theorem}
+	
+	\begin{assumption}
+		assumption
+		%\item assumption 1a
+	\end{assumption}
+	\begin{assumption}
+		assumption
+		%\item assumption 1a
+	\end{assumption}
+	
+	\begin{lemma}
+		\label{lemma:1}
+		lemma
+	\end{lemma}
+	
+	\begin{proof}[Доказательство Леммы \ref{lemma:1}]
+		ABC 
+	\end{proof}
+	\begin{proof} Proof of Lemma \cref{lemma:1}
+		XYZ
+	\end{proof}
+	
+	\begin{proposal}
+		proposal
+	\end{proposal}
+		
+	\begin{corollary}
+		corollary
+	\end{corollary}
+	
+	\begin{statement}
+		statement
+	\end{statement}
+	
+	\begin{remark}
+		remark
+	\end{remark}
+	
+	\begin{definition}
+		definition
+	\end{definition}
+	
+	\begin{example}
+		example
+	\end{example}
+	
+	\begin{problem}
+		problem
+	\end{problem}
+
+\begin{figure}{
+	\IncMargin{1em} %increases the size of the nalgomargin by the length given in argument.
+	\begin{algorithm}[H] %The H argument forces the algorithm to stay in place
+		\SetKwData{Left}{left}\SetKwData{This}{this}\SetKwData{Up}{up}
+		\SetKwFunction{Union}{Union}\SetKwFunction{FindCompress}{FindCompress}
+		\SetKwInOut{Input}{input}\SetKwInOut{Output}{output}
+		\Input{A bitmap $Im$ of size $w\times l$}
+		\Output{A partition of the bitmap}
+		\BlankLine
+		\emph{special treatment of the first line}\;
+		\For{$i\leftarrow 2$ \KwTo $l$}{
+			\emph{special treatment of the first element of line $i$}\;
+			\For{$j\leftarrow 2$ \KwTo $w$}{\label{forins}
+				\Left$\leftarrow$ \FindCompress{$Im[i,j-1]$}\;
+				\Up$\leftarrow$ \FindCompress{$Im[i-1,]$}\;
+				\This$\leftarrow$ \FindCompress{$Im[i,j]$}\;
+				\If(\tcp*[h]{O(\Left,\This)==1}){\Left compatible with \This}{\label{lt}
+					\lIf{\Left $<$ \This}{\Union{\Left,\This}}
+					\lElse{\Union{\This,\Left}}
+				}
+				\If(\tcp*[f]{O(\Up,\This)==1}){\Up compatible with \This}{\label{ut}
+					\lIf{\Up $<$ \This}{\Union{\Up,\This}}
+					\tcp{\This is put under \Up to keep tree as flat as possible}\label{cmt}
+					\lElse{\Union{\This,\Up}}\tcp*[h]{\This linked to \Up}\label{lelse}
+				}
+			}
+			\lForEach{element $e$ of the line $i$}{\FindCompress{p}}
+		}
+		\caption{disjoint decomposition}\label{algo_disjdecomp1}
+	\end{algorithm} 
+	\DecMargin{1em} %increases the size of the nalgomargin by the length given in argument.
+	\caption{Algoritm test 1...}
+}
+\end{figure}
+	
+\begin{figure} %https://www.latex4technics.com/?note=VOR
+	\begin{algorithm}[H]%The H argument forces the algorithm to stay in place
+		\SetAlgoLined
+		\KwInput{Parameters...}
+		
+		\KwOutput{$\emptyset$}
+		
+		\If{Condition}
+		{
+			Do something \;
+		}
+		\caption{Пример алгоритма 2}	\label{algo_disjdecomp2}
+	\end{algorithm}
+	\caption{Algoritm test 2...}
+\end{figure}

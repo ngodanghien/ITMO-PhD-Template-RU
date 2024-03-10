@@ -11,14 +11,6 @@
     Общая характеристика диссертации
 \end{center}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\linewidth]{images/knuth}
-    \caption{Knuth}
-    \label{fig:my_label2}
-\end{figure}
-
-
 \paragraph*{Актуальность.}
 
 \paragraph*{Цель исследования.}
@@ -65,6 +57,41 @@
 \section*{Основное содержание работы}
 
 В Главе~\ref{ch:ch1}...
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\linewidth]{images/knuth}
+    \caption{Knuth}
+    %\label{fig:my_label2}
+\end{figure}
+\begin{table}
+	\centering
+	\caption{Basic SI quantities}%\label{tab:unit:base}
+	\begin{tabular}{llc}
+		\toprule
+		Name 	& 	Command 	& 	Symbol         \\
+		\midrule
+		Ampere     & \verb|\ampere| & \si{\ampere}   \\
+		Candela   & \verb|\candela| & \si{\candela}  \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+\begin{align} %\label{eq:sec1}
+	1+2=3
+\end{align}
+
+\begin{assumption-syn-ru}
+	Здесь и далее знак коэффициента при управлении $b_m$
+	принимается известным. Без потери общности полагается $b_m >0$.
+\end{assumption-syn-ru}
+\begin{lemma-syn-ru} \label{lemma1}
+	content...
+\end{lemma-syn-ru}
+
+\begin{proof}[Доказательство леммы \ref{lemma1}]
+	content...
+\end{proof}
 
 \section*{Публикации автора по теме диссертации}
 

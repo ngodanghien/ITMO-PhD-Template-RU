@@ -11,3 +11,21 @@
 \]
 
 
+\chapter{Code example}
+
+%https://www.overleaf.com/learn/latex/Questions/How_can_I_include_MATLAB_code_in_my_LaTeX_document%3F
+\begin{lstlisting}[style=Matlab-editor, frame=single, numbers=left,]
+	%% Пример кода Matlab
+	!mv test.txt test2.txt
+	A = [1, 2, 3;... foo
+	4, 5, 6];
+	s = 'abcd';
+	for k = 1:4
+	Disp(s(k)) % bar
+	end
+	%{
+		create row vector x, then reverse it
+		%}
+	x = linspace(0,1,101);
+	y = x(end:-1:1);
+\end{lstlisting}

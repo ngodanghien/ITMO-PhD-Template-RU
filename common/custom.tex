@@ -1,0 +1,99 @@
+% author: hiennd, March 03 2024
+% for english version.
+%\newtheorem{theorem}{Theorem}
+%\newtheorem{assumption}{Assumption}
+%\newtheorem{lemma}{Lemma}
+%\newtheorem{proof}{Proof}
+%\newtheorem{proposal}{Proposal}
+%\newtheorem{proposition}{Proposition}
+%\newtheorem{corollary}{Corollary}
+%\newtheorem{statement}{Statement}
+%\newtheorem{remark}{Remark}
+%\newtheorem{definition}{Definition}
+%\newtheorem{example}{Example}
+%\newtheorem{problem}{Problem}
+%\newtheorem{algorithm}{Algorithm}
+
+% for russian, follow as VSPUart stye (VSPU-2024)
+%Synopse: \newtheorem{name}[numbered_like]{title}
+% default = plain : italic text, extra space above and below
+\theoremstyle{definition}% definition : upright text, extra space above and below;
+
+%\newtheorem{theorem-syn-ru}{Теорема}
+\newtheorem{assumption-syn-ru}{Допущение} % Предположение or Допущение 1
+\newtheorem{assumption-syn-en}{Assumption}
+\newtheorem{lemma-syn-ru}{Лемма}
+\newtheorem{lemma-syn-en}{Lemma}
+\newtheorem{proposition-syn-ru}{Предложение} % maybe
+\newtheorem{proposition-syn-en}{Proposition}
+\newtheorem{corollary-syn-ru}{Следствие}
+\newtheorem{corollary-syn-en}{Corollary}
+\newtheorem{statement-syn-ru}{Утверждение}
+\newtheorem{statement-syn-en}{Statement}
+\newtheorem{remark-syn-ru}{Замечание}
+\newtheorem{remark-syn-en}{Remark}
+\newtheorem{definition-syn-ru}{Определение}
+\newtheorem{definition-syn-en}{Definition}
+\newtheorem{example-syn-ru}{Пример}
+\newtheorem{example-syn-en}{Example}
+%\newtheorem{problem}{Задача}
+
+\newtheorem{theorem}{Теорема}[chapter]
+\newtheorem{assumption}{Допущение}[chapter] % Предположение or Допущение 1.1
+\newtheorem{lemma}{Лемма}[chapter]
+\newtheorem{proposal}{Предложение}[chapter]
+\newtheorem{proposition}{Предложение}[chapter] % maybe
+\newtheorem{corollary}{Следствие}[chapter]
+\newtheorem{statement}{Утверждение}[chapter]
+\newtheorem{remark}{Замечание}[chapter]
+\newtheorem{definition}{Определение}[chapter]
+\newtheorem{example}{Пример}[chapter]
+\newtheorem{problem}{Задача}[chapter]
+%\newtheorem{algorithm}{Алгоритм}[chapter]
+%\newtheorem{iteration}{Итерационная схема}
+
+%\newtheorem{proof}{Доказательство}
+%\renewenvironment{proof}{Доказательство}{}
+%\renewenvironment{proof}
+%{\vspace\topsep\par{Доказательство.\,\ }\ignorespaces}%
+%{\noindent\vspace\partopsep}
+
+%\renewenvironment{proof}
+%{\vspace\topsep\par{
+%		\textbf{Доказательство.}\,\ }\ignorespaces}%
+%{\noindent\vspace\partopsep}
+
+
+%\makeatletter
+%\renewenvironment{proof}[1][\proofname]{\par
+%	\pushQED{\qed}%
+%	\normalfont \topsep6\p@\@plus6\p@\relax
+%	\trivlist
+%	\item\relax
+%	{\itshape
+%		#1\@addpunct{.}}\hspace\labelsep\ignorespaces
+%}{%
+%	\popQED\endtrivlist\@endpefalse
+%}
+%\makeatother
+
+%\crefformat{chapter}{#2#1#3} % одиночная ссылка с приставкой
+%\labelcrefformat{chapter}{#2#1#3} % одиночная ссылка без приставки
+%\crefformat{typei}{format}
+%\crefformat{chapter}{Chapter~#2#1#3}
+
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\newcommand\normx[1]{\left\Vert#1\right\Vert}
+
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\Q{\mathbb{Q}}
+
+\def\L{\mathcal{L}}	% norm L_x
+\def\cal#1{\mathcal{#1}} % class menoir don't support \cal.
+%\renewcommand\qedsymbol{QED}
+%\renewcommand\qedsymbol{$\blacksquare$}
+%\def\qed{\hfill$\blacksquare$}
+%\def\boxw{\hfill$\Box$}

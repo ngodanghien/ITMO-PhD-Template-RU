@@ -1,6 +1,7 @@
 %%====(NOTE)========================================================================================
 %	1. Dãn cách dòng với dòng (giống Line Spacing trong WORD): \DoubleSpacing; \OnehalfSpacing; \setSpacing{}
 % 	2. Thụt TAB ở Line đầu tiên sau (Chapter/Section/Subsection): \setlength{\parindent}{2.5em}
+%   3. \newcommand*{\intafterskip}{42pt}	%maybe = 14*3 (khoản cách 3 lần)
 %%======(begin)[ĐỊNH DẠNG KHỔ GIẤY]=========================================>>>>>>>>>>>>>>>>>>>
 %\usepackage{geometry}
 \geometry{a4paper, top=2cm, bottom=2cm, left=2.5cm, right=1cm, nofoot, nomarginpar}
@@ -11,8 +12,8 @@
 %% Реализация средствами класса (на основе setspace) ближе к типографской классике.
 %% И правит сразу и в таблицах (если со звёздочкой)
 %\DoubleSpacing*     % Двойной интервал
-%\OnehalfSpacing*    % Полуторный интервал
-\setSpacing{1.5}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
+\OnehalfSpacing*    % Полуторный интервал
+%\setSpacing{1.5}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
 %%% Выравнивание и переносы %%%
 %% http://tex.stackexchange.com/questions/241343/what-is-the-meaning-of-fussy-sloppy-emergencystretch-tolerance-hbadness
 %% http://www.latex-community.org/forum/viewtopic.php?p=70342#p70342
@@ -35,7 +36,7 @@
 %% Эти установки будут давать одинаковый результат независимо от выбора базовым шрифтом 12 пт или 14 пт
 \newcommand{\basegostsectionfont}{\fontsize{14pt}{16pt}\selectfont\bfseries}
 % Заголовки отделяют от текста сверху и снизу 3 интервалами (ГОСТ Р 7.0.11-2011, 5.3.5)
-\newcommand*{\intafterskip}{24pt}	%maybe
+\newcommand*{\intafterskip}{42pt}	%maybe = 14*3
 \makechapterstyle{thesisgost}{%
 	%\chapterstyle{default}
 	\renewcommand*{\chapterheadstart}{}	% dịch chapter lên vị trí header (đưa lên cao nhất)
