@@ -16,7 +16,21 @@ This form has been rewritten more neatly and fully complies with ITMO's regulati
 1. Take advantage of all the strengths found in [toftul/itmo-phd-thesis-template-en](https://github.com/toftul/itmo-phd-thesis-template-en)
 2. Continue using the file `biblio/own.bib` and automatically calculate the number of articles and automatically print them out in the appropriate locations. Check everything in `biblio/author` and `biblio/counter`. Citations still comply with style [GOST 7.0.100-2018](https://ctan.org/pkg/biblatex-gost?lang=en).
 3. Use only the necessary packages, leaving out the complicated stuff. Move your settings to the corresponding packages for easy management and future updates.
-
+4. Commands to print articles and conferences are through the following commands:
+    ```tex
+    % Print paper with indexed
+    \printPapperScopus
+    \printPapperVak
+    \printPapperOther
+    \printAllMyPapper
+    % Print conferences
+    \printConferenceEN
+    \printConferenceRU
+    ```
+5. Added code insertion, matlab (can comment in Russian),  `\usepackage{matlab-prettifier}`
+6. Add `algorithm2e` to write the algorithm, put it in the figure environment (with example) and it will be listed in the `List of figures`.
+7. Define appropriate `theorems (lemma, assumption, ...)`
+8. Reset the `numbering of Table, Figure, Equation,` ... so that Chapter `syn_ru` and `syn_en` are the same.
 ## How to use
 
 ### Online compilation
