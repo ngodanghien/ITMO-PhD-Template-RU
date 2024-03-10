@@ -6,6 +6,8 @@ In addition, there is a repository of thesis templates for Russian [ngodanghien/
 
 There is an official template on the [ITMO Dissertation Council](https://dissovet.itmo.ru/index.php?main=110) website, which is a fork of the well-known template [AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template).
 
+![title itmo](./images/itmo/title_itmo.png)
+
 ## Why does this exist
 The above templates are configured with many things, for many platforms, so they are quite complicated to fully understand. In addition, there are some packages that are outdated and currently (2024) will report an error, for example on [Overleaf](https://www.overleaf.com/).
 
