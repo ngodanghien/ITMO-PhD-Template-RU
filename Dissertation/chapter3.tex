@@ -1,4 +1,202 @@
 \chapter{Третья глава}
 \label{ch:ch3}
 
-\cite{NikGerbook2022}
+\section{Guide for the amsmath Package}
+The \textbf{amsmath} package provides a number of additional displayed equation structures beyond the ones provided in basic \LaTeX. The augmented set includes:
+\begin{verbatim}
+	equation 	equation* 	align 		align*
+	gather 		gather* 	alignat 	alignat*
+	multline 	multline* 	flalign 	flalign*
+	split
+\end{verbatim}
+
+better to use \verb*|align| or \verb*|equation+split|
+
+The \textbf{split} environment is a special subordinate form that is used \textcolor{red}{only inside one of the others, and the split environment provides no numbering.} \textcolor{magenta}{It cannot be used inside multline},  usually an \verb*|equation,align,gather| environment, however \textbf{split} supports only one alignment (\&) column; if more are needed, \textbf{aligned} or \textbf{alignedat} should be used. 
+
+\subsection{Single equations}
+The \textbf{equation} environment is for a single equation with an automatically generated number. 
+The wrapper \verb*|\[...\]| is equivalent to \textbf{equation*}.
+
+\subsection{Split equations without alignment}
+%Môi trường đa dòng là một biến thể của môi trường phương trình được sử dụng cho các phương trình không vừa trên một dòng.
+The \textbf{multline} environment is a variation of the equation environment used for equations that \textcolor{red}{don’t fit on a single line}. \\
+Example for equation + split
+\begin{equation}\label{xx}
+	\begin{split}
+		a& =b+c-d\\
+		& \quad +e-f\\
+		& =g+h\\
+		& =i
+	\end{split}
+\end{equation}
+Example for gather 
+\begin{gather}
+	a_1=b_1+c_1\\
+	a_2=b_2+c_2-d_2+e_2
+\end{gather}
+Example for align
+\begin{align}
+	a_1& =b_1+c_1\\
+	a_2& =b_2+c_2-d_2+e_2
+\end{align}
+\begin{align}
+	a_{11}& =b_{11}& a_{12}& =b_{12}\\
+	a_{21}& =b_{21}& a_{22}& =b_{22}+c_{22}
+\end{align}
+
+\subsection{Split equations with alignment}
+%Giống như nhiều dòng, môi trường phân tách dành cho các phương trình đơn quá dài để vừa trên một dòng và do đó phải được chia thành nhiều dòng.
+Like multline, the split environment is for single equations that are \textcolor{blue}{too long to fit on one line} and \textcolor{red}{hence must be split into multiple lines.}
+\begin{equation}\label{e:barwq}
+	\begin{split}
+		H_c&=\frac{1}{2n} \sum^n_{l=0}(-1)^{l}(n-{l})^{p-2}
+		\sum_{l _1+\dots+ l _p=l}\prod^p_{i=1} \binom{n_i}{l _i}\\
+		&\quad\cdot[(n-l )-(n_i-l _i)]^{n_i-l _i}\cdot
+		\Bigl[(n-l )^2-\sum^p_{j=1}(n_i-l _i)^2\Bigr].
+	\end{split}
+\end{equation}
+
+\subsection{Equation groups with mutual alignment}
+\begin{align}
+	x 	&=y 		& X		&=Y 	& a		&=b+c\\
+	x’	&=y’ 		& X’	&=Y’ 	& a’	&=b\\
+	x+x’&=y+y’ 		& X+X’	&=Y+Y’ 	& a’b	&=c’b
+\end{align}
+Line-by-line annotations on an equation can be done by judicious application of
+\text inside an align environment:
+\begin{align}
+	x& = y_1-y_2+y_3-y_5+y_8-\dots 	&& \text{by \eqref{e:barwq}}\\
+	& = y’\circ y^* 				&& \text{by \eqref{xx}}\\
+	& = y(0) y’ 					&& \text{by Axiom 1.}
+\end{align}
+
+\subsection{Alignment building blocks}
+\textbf{gathered}, \textbf{aligned}, and \textbf{alignedat} 
+\begin{equation*}
+	\left.\begin{aligned}
+		B’&=-\partial\times E,\\
+		E’&=\partial\times B - 4\pi j,
+	\end{aligned}
+	\right\}
+	\qquad \text{Maxwell’s equations}
+\end{equation*}
+
+\begin{equation}
+	P_{r-j}=
+	\begin{cases}
+		0					& \text{if $r-j$ is odd},\\
+		r!\,(-1)^{(r-j)/2}	& \text{if $r-j$ is even}.
+	\end{cases}
+\end{equation}
+
+\subsection{Matrices}
+The pmatrix, \textcolor{red}{bmatrix}, Bmatrix, vmatrix and Vmatrix have (respectively) \verb*|( ), [ ], { }|, | | and $\| \|$ delimiters built in.
+
+To produce a small matrix suitable for use in text, there is a smallmatrix
+environment e.g. 
+$\bigl( \begin{smallmatrix}
+	a&b\\ c&d
+\end{smallmatrix} \bigr)$
+
+\begin{equation}
+	\begin{pmatrix} D_1t&-a_{12}t_2&\dots&-a_{1n}t_n\\
+		-a_{21}t_1&D_2t&\dots&-a_{2n}t_n\\
+		\hdotsfor[2]{4}\\ %tạo ra dấu chấm ở 4 cột, khoản cách ... là 2.
+		-a_{n1}t_1&-a_{n2}t_2&\dots&D_nt
+	\end{pmatrix}
+\end{equation}
+
+\subsection{Dots}
+\verb*|\ldots \dots \cdots \dotsc \dotsb \dotsm \dotsi \dotso|
+\begin{align*}
+	\ldots \; \dots \; \cdots \; \dotsc \; \dotsb \; \dotsm \; \dotsi \; \dotso
+\end{align*}
+\verb*|\cdots \ddots \ldots \dots \vdots|
+\begin{align}
+	\cdots \quad 
+	\ddots \quad \ldots \quad 
+	\dots \quad \vdots 
+\end{align}
+\subsection{Roots}
+$\sqrt[\beta]{k}$ vs $\sqrt[\leftroot{-2}\uproot{2}\beta]{k}$
+
+\subsection{Boxed formulas}
+\begin{equation}
+	\boxed{\eta \leq C(\delta(\eta) +\Lambda_M(0,\delta))}
+\end{equation}
+
+\subsection{Over and under arrows}
+Basic \LaTeX:
+\begin{verbatim}
+	\overleftarrow 		\underleftarrow
+	\overrightarrow 	\underrightarrow
+	\overleftrightarrow \underleftrightarrow
+\end{verbatim}
+\begin{align}
+	\overleftarrow{a+b} 		\quad \underleftarrow{a+b} \\
+	\overrightarrow{a+b} 		\quad \underrightarrow{a+b} \\
+	\overleftrightarrow{a+b} 	\quad \underleftrightarrow{a+b}
+\end{align}
+Extensible arrows (amsmath package): \verb*|\xleftarrow and \xrightarrow|
+\[\xleftarrow{n+\mu-1}\quad \xrightarrow[T]{n\pm i-1}\]
+
+\subsection{Over- and Underlining}
+\begin{align*}
+	\underline{text} \quad
+	\overline{text} \quad
+	\underbrace{math} \quad
+	\overbrace{math}
+\end{align*}
+\begin{equation}
+	1+1/2+\underbrace{1/3+1/4}_{>1/2}+
+	\underbrace{1/5+1/6+1/7+1/8}_{>1/2}+\cdots
+\end{equation}
+
+\subsection{Fractions and related constructions}
+\begin{equation}
+	\frac{1}{k}\log_2 c(f)\;\tfrac{1}{k}\log_2 c(f)\;
+	\sqrt{\frac{1}{k}\log_2 c(f)}\;\sqrt{\dfrac{1}{k}\log_2 c(f)}
+\end{equation}
+\begin{equation}
+	2^k-\binom{k}{1}2^{k-1}+\binom{k}{2}2^{k-2}
+\end{equation}
+
+\subsection{Delimiters}
+\begin{align}
+	\left[\sum_i a_i \left\lvert\sum_j x_{ij}\right\rvert^p\right]^{1/p} \qquad \text{vs.} \qquad
+	\biggl[\sum_i a_i\Bigl\lvert\sum_j x_{ij}\Bigr\rvert^p\biggr]^{1/p}
+\end{align}
+\begin{align*}
+	\left((a_1 b_1) - (a_2 b_2)\right)
+	\left((a_2 b_1) + (a_1 b_2)\right)
+	\quad\text{versus}\quad
+	\bigl((a_1 b_1) - (a_2 b_2)\bigr)
+	\bigl((a_2 b_1) + (a_1 b_2)\bigr)
+\end{align*}
+
+\textbf{Vertical bar notations}: \verb*|\lvert, \rvert, \lVert, \rVert|
+\begin{align}
+	\lvert -123 \rvert \qquad 	\abs{-123} \\
+	\lVert AAA \rVert  \qquad	\norm{AAA}
+\end{align}
+
+\subsection{The text command}
+
+\begin{align}
+	f_{[x_{i-1},x_i]} \text{ is monotonic,}	\quad i = 1,\dots,c+1 \\
+	\partial_s f(x) = \frac{\partial}{\partial x_0} f(x)\quad
+	\text{for $x= x_0 + I x_1$.}
+\end{align}
+
+\subsection{Integrals and sums}
+\begin{align}
+	\sum_{\substack{
+			0\le i\le m\\
+			0<j<n}}
+	P(i,j) \qquad
+	\sum_{\begin{subarray}{l}
+			i\in\Lambda\\ 0<j<n
+	\end{subarray}}
+	P(i,j)
+\end{align}
