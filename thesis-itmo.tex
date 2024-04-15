@@ -12,39 +12,38 @@
 
 \begin{document}
 
-\include{Dissertation/title}           % Титульный лист
-\include{Dissertation/contents}        % Оглавление
-
-\initSynopsisRU							% Reset numbering of equation, figure, table.
-\include{Dissertation/syn_ru} 			% реферат на русском
-\initSynopsisEN							% Reset numbering of equation, figure, table. 
-\include{Dissertation/syn_en} 			% реферат на английском
-
-\initIntroduction
-\include{Dissertation/introduction}    	% Введение
-
-\intChapter
-\include{Dissertation/chapter1}         % Глава 1
-\include{Dissertation/chapter2}         % Глава 2
-\include{Dissertation/chapter3}         % Глава 3
-\include{Dissertation/chapter4}         % Глава 4
-\setcounter{totalchapter}{\value{chapter}} % Count the number of chapters
-
-\include{Dissertation/conclusion}      % Заключение
-
-% Options (if any)
-\include{Dissertation/acronyms}        % Список сокращений и условных обозначений
-\include{Dissertation/dictionary}      % Словарь терминов
-
-\include{Dissertation/lists}           % Списки таблиц и изображений
-\include{Dissertation/references}      % Список литературы
-
-\include{Dissertation/acknowledgements} % Благодарности
-
-\appendix
-\initAppendix						   % setup for Appendix
-\include{Dissertation/appendix}        % Приложения, 
-\include{Dissertation/my_publications} % тут же свои публикации
-\setcounter{totalappendix}{\value{chapter}} % Count the number of appendix
+	\include{Dissertation/title}           % Титульный лист
+	\include{Dissertation/contents}        % Оглавление
+	
+	\initSynopsisRU							% Reset numbering of equation, figure, table.
+	\include{Dissertation/syn_ru} 			% реферат на русском
+	\initSynopsisEN							% Reset numbering of equation, figure, table. 
+	\include{Dissertation/syn_en} 			% реферат на английском
+	
+	\initIntroduction
+	\include{Dissertation/introduction}    	% Введение
+	
+	\intChapter
+	\include{Dissertation/chapter1}         % Глава 1
+	\include{Dissertation/chapter2}         % Глава 2
+	\include{Dissertation/chapter3}         % Глава 3
+	\include{Dissertation/chapter4}         % Глава 4
+	\setcounter{totalchapter}{\value{chapter}} % Count the number of chapters
+	
+	\include{Dissertation/conclusion}      % Заключение
+	
+	% Options (if any)
+	\include{Dissertation/acronyms}        % Список сокращений и условных обозначений
+	\include{Dissertation/dictionary}      % Словарь терминов
+	
+	\include{Dissertation/lists}           % Списки таблиц и изображений
+	\include{Dissertation/references}      % Список литературы
+	
+	\include{Dissertation/acknowledgements} % Благодарности
+	
+	\initAppendix						   % setup for Appendix
+	\include{Dissertation/appendix}        % Приложения, 
+	\include{Dissertation/my_publications} % тут же свои публикации
+	\setcounter{totalappendix}{\value{chapter}} % Count the number of appendix
 
 \end{document}
