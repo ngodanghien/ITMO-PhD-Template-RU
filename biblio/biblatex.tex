@@ -3,23 +3,18 @@
 \usepackage{csquotes} % biblatex рекомендует его подключать
 
 \usepackage[%
-    backend=biber,
-    bibencoding=utf8,
-    sorting=none,
-    style=gost-numeric,
-    language=autobib,
-    autolang=other,
-    clearlang=true,
-    defernumbers=true,
+    backend=biber, bibencoding=utf8,
+    sorting=none, style=gost-numeric,
+    language=autobib,  autolang=other,
+    clearlang=true,  defernumbers=true,
     sortcites=true,
-    doi=false,
+    doi=true,
+    url=false, % add new: + doi, - url
     isbn=false,
-    %https://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
     giveninits=true,
     maxbibnames=99,
     movenames=false, %Put the author's name first.
 ]{biblatex}
-
 \addbibresource{biblio/references.bib}
 
 % https://tex.stackexchange.com/a/202797
